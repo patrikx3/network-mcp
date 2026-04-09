@@ -1,0 +1,55 @@
+{
+    "name": "p3x-network-mcp",
+    "version": "2026.4.100",
+    "description": "🌐 P3X Network MCP: AI-powered network analysis MCP server",
+    "corifeus": {
+        "description": "🌐 P3X Network MCP: AI-powered network analysis MCP server",
+        "icon": "fas fa-network-wired",
+        "prefix": "p3x-",
+        "type": "p3x",
+        "publish": true,
+        "build": true,
+        "reponame": "network-mcp",
+        "opencollective": false,
+        "nodejs": "v24.14.1"
+    },
+    "type": "module",
+    "main": "index.mjs",
+    "bin": {
+        "p3x-network-mcp": "./index.mjs"
+    },
+    "scripts": {
+        "start": "node index.mjs",
+        "test": "node --test test/**/*.test.mjs",
+        "build": "grunt --gruntfile Gruntfile.cjs"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.29.0",
+        "zod": "4"
+    },
+    "keywords": [
+        "network",
+        "mcp",
+        "claude",
+        "dns",
+        "ssl",
+        "security",
+        "audit",
+        "whois"
+    ],
+    "devDependencies": {
+        "corifeus-builder": "^2025.4.135"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/patrikx3/network-mcp.git"
+    },
+    "homepage": "https://corifeus.com/network-mcp",
+    "bugs": {
+        "url": "https://github.com/patrikx3/network-mcp/issues"
+    },
+    "engines": {
+        "node": ">=12.13.0"
+    }
+}
