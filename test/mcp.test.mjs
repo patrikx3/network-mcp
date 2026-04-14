@@ -35,7 +35,9 @@ describe('P3X Network MCP Server', () => {
             assert.ok(names.includes('ipv6_check'), 'missing ipv6_check');
             assert.ok(names.includes('geolocation'), 'missing geolocation');
             assert.ok(names.includes('my_ip'), 'missing my_ip');
-            assert.equal(names.length, 15, `expected 15 tools, got ${names.length}`);
+            assert.ok(names.includes('email_test'), 'missing email_test');
+            assert.ok(names.includes('email_test_result'), 'missing email_test_result');
+            assert.equal(names.length, 17, `expected 17 tools, got ${names.length}`);
         } finally {
             await client.close();
         }

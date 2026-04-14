@@ -6,7 +6,7 @@
 
 
 
-# 🌐 P3X Network MCP: AI-powered network analysis MCP server v2026.4.111
+# 🔍 P3X Network MCP: AI-powered network analysis MCP server v2026.4.114
 
 
   
@@ -95,6 +95,8 @@ npx p3x-network-mcp
 | `ipv6_check` | IPv6 support verification |
 | `geolocation` | IP geolocation data |
 | `my_ip` | Server public IP address |
+| `email_test` | Start a live email deliverability test (SPF, DKIM, DMARC, spam score, AI analysis) |
+| `email_test_result` | Get the result of a previously started email test |
 
 ## Usage Examples
 
@@ -104,7 +106,25 @@ npx p3x-network-mcp
 "is patrikx3.com secure?"
 "whois google.com"
 "check email deliverability for example.com"
+"test email support@example.com"
 ```
+
+### Email Test Flow
+
+The `email_test` tool performs a live end-to-end email deliverability test:
+
+1. Call `email_test` with an email address (e.g. `support@example.com`)
+2. The system sends a test email to that address
+3. The recipient replies to the test email
+4. Call `email_test_result` with the returned `testId` to get:
+   - Score (0-10)
+   - SPF, DKIM, DMARC authentication results
+   - DNS blacklist status
+   - Spam score
+   - Message format and header analysis
+   - AI-powered recommendations
+
+This goes beyond passive DNS checks (`email_deliverability`) by verifying that email authentication actually works in practice on a real delivered message.
 
 ## Configuration
 
@@ -165,7 +185,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.111
+[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.114
 
  [![NPM](https://img.shields.io/npm/v/p3x-network-mcp.svg)](https://www.npmjs.com/package/p3x-network-mcp)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

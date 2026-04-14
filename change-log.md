@@ -1,9 +1,13 @@
 [//]: #@corifeus-header
 
-# 🌐 P3X Network MCP: AI-powered network analysis MCP server
+# 🔍 P3X Network MCP: AI-powered network analysis MCP server
 
                         
 [//]: #@corifeus-header:end
+
+### v2026.4.114
+Released on 04/15/2026
+* FEATURE: Added `email_test` and `email_test_result` MCP tools for email testing and result retrieval.
 
 ### v2026.4.111
 Released on 04/11/2026
@@ -69,7 +73,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.111
+[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.114
 
  [![NPM](https://img.shields.io/npm/v/p3x-network-mcp.svg)](https://www.npmjs.com/package/p3x-network-mcp)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

@@ -210,5 +210,27 @@ server.registerTool('my_ip', {
     return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 
+server.registerTool('email_test', {
+    title: 'Email Test',
+    description: 'Start a live email deliverability test. Sends a test email to the given address — the recipient must reply to it. The reply is analyzed for SPF, DKIM, DMARC authentication, blacklist status, spam score, headers, and message format. Returns a testId to check results with email_test_result.',
+    inputSchema: {
+        email: z.string().describe('Email address to test (e.g. "support@example.com")'),
+    },
+}, async ({ email }) => {
+    const result = await request('POST', '/public/api/mail-tester/start', { email });
+    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+});
+
+server.registerTool('email_test_result', {
+    title: 'Email Test Result',
+    description: 'Get the result of a previously started email test. Returns the score (0-10), SPF/DKIM/DMARC results, blacklist status, spam score, and AI analysis. Status will be "waiting" until the recipient replies to the test email.',
+    inputSchema: {
+        testId: z.string().describe('The 32-character hex test ID returned by email_test'),
+    },
+}, async ({ testId }) => {
+    const result = await request('GET', `/public/api/mail-tester/result/${encodeURIComponent(testId)}`);
+    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+});
+
 const transport = new StdioServerTransport();
 await server.connect(transport);
