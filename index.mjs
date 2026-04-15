@@ -212,12 +212,13 @@ server.registerTool('my_ip', {
 
 server.registerTool('email_test', {
     title: 'Email Test',
-    description: 'Start a live email deliverability test. Sends a test email to the given address — the recipient must reply to it. The reply is analyzed for SPF, DKIM, DMARC authentication, blacklist status, spam score, headers, and message format. Returns a testId to check results with email_test_result.',
+    description: 'Start a live email deliverability test. Sends a test email to the given address — the recipient must reply to it. The reply is analyzed for SPF, DKIM, DMARC authentication, blacklist status, spam score, headers, and message format. Results are automatically sent to the tested email address, so polling with email_test_result is optional. Returns a testId to check results programmatically if needed.',
     inputSchema: {
         email: z.string().describe('Email address to test (e.g. "support@example.com")'),
+        language: z.string().optional().describe('Language code for the test and result emails (en, hu, de, fr, es, it, cs, ru, zh, ja). Defaults to en.'),
     },
-}, async ({ email }) => {
-    const result = await request('POST', '/public/api/mail-tester/start', { email });
+}, async ({ email, language }) => {
+    const result = await request('POST', '/public/api/mail-tester/start', { email, language: language || 'en' });
     return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 

@@ -95,8 +95,8 @@ npx p3x-network-mcp
 | `ipv6_check` | IPv6 support verification |
 | `geolocation` | IP geolocation data |
 | `my_ip` | Server public IP address |
-| `email_test` | Start a live email deliverability test (SPF, DKIM, DMARC, spam score, AI analysis) |
-| `email_test_result` | Get the result of a previously started email test |
+| `email_test` | Start a live email deliverability test (SPF, DKIM, DMARC, spam score, AI analysis). Results are sent by email automatically. |
+| `email_test_result` | Get the result of a previously started email test (optional — results are also emailed) |
 
 ## Usage Examples
 
@@ -113,16 +113,19 @@ npx p3x-network-mcp
 
 The `email_test` tool performs a live end-to-end email deliverability test:
 
-1. Call `email_test` with an email address (e.g. `support@example.com`)
+1. Call `email_test` with an email address (e.g. `support@example.com`) and optional `language` code
 2. The system sends a test email to that address
 3. The recipient replies to the test email
-4. Call `email_test_result` with the returned `testId` to get:
+4. **Results are automatically sent by email** — no polling required! The result email includes:
    - Score (0-10)
    - SPF, DKIM, DMARC authentication results
-   - DNS blacklist status
+   - Individual blacklist status for all 23 checked lists
    - Spam score
    - Message format and header analysis
-   - AI-powered recommendations
+   - AI-powered recommendations in the selected language
+5. Optionally, call `email_test_result` with the returned `testId` to get results programmatically
+
+Supported languages: `en`, `hu`, `de`, `fr`, `es`, `it`, `cs`, `ru`, `zh`, `ja`
 
 This goes beyond passive DNS checks (`email_deliverability`) by verifying that email authentication actually works in practice on a real delivered message.
 
