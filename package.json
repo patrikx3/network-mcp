@@ -1,9 +1,10 @@
 {
     "name": "p3x-network-mcp",
-    "version": "2026.4.115",
-    "description": "🔍 P3X Network MCP: AI-powered network analysis MCP server",
+    "version": "2026.4.117",
+    "description": "🔍 P3X Network MCP — Model Context Protocol server exposing 17 DNS, SSL, WHOIS, email deliverability, and security tools to any MCP client",
     "corifeus": {
-        "description": "🔍 P3X Network MCP: AI-powered network analysis MCP server",
+        "description": "🔍 P3X Network MCP — Model Context Protocol server exposing 17 DNS, SSL, WHOIS, email deliverability, and security tools to any MCP client",
+        "description-npm": "🔍 P3X Network MCP — Model Context Protocol server exposing 17 DNS, SSL, WHOIS, email deliverability, and security tools to any MCP client",
         "icon": "fas fa-network-wired",
         "code": "Probe",
         "prefix": "p3x-",
@@ -39,7 +40,7 @@
         "whois"
     ],
     "devDependencies": {
-        "corifeus-builder": "^2026.4.143"
+        "corifeus-builder": "^2026.4.149"
     },
     "license": "MIT",
     "repository": {

@@ -6,7 +6,7 @@
 
 
 
-# 🔍 P3X Network MCP: AI-powered network analysis MCP server v2026.4.115
+# 🔍 P3X Network MCP — Model Context Protocol server exposing 17 DNS, SSL, WHOIS, email deliverability, and security tools to any MCP client v2026.4.117
 
 
   
@@ -34,9 +34,17 @@ v24.14.1
                         
 [//]: #@corifeus-header:end
 
-AI-powered network analysis MCP (Model Context Protocol) server. Works with any MCP-compatible client.
+A Model Context Protocol (MCP) server that exposes the [network.corifeus.com](https://network.corifeus.com) diagnostics suite — DNS, SSL, WHOIS, email deliverability, BGP, security headers, and more — directly inside any MCP-compatible AI assistant (Claude Code, Codex, Cursor, and others).
 
-Wraps the [network.corifeus.com](https://network.corifeus.com) API to provide network diagnostics directly from your AI assistant.
+Ask in plain language: *"audit example.com"*, *"why do my emails land in spam?"*, *"check DNS propagation for patrikx3.com"* — and the assistant calls the right tool for you.
+
+## Features
+
+- **17 tools** — audits, DNS, SSL, WHOIS, HTTP, email deliverability, blacklist lookups, BGP, geolocation, IPv6
+- **Zero config** — runs over stdio with `npx`, no account, no API key
+- **AI-powered audit** — `network_audit` returns a single combined health report
+- **Live email test** — end-to-end SPF/DKIM/DMARC verification with spam score and AI-generated fix suggestions
+- **Works with every MCP client** — Claude Code, Codex, Cursor, Continue, or any custom host
 
 ## Install
 
@@ -147,6 +155,26 @@ https://network.corifeus.com
 
 ---
 
+# 🌐 Meet Assistant SaaS — meeting.corifeus.com
+
+Don't want to install anything? Try the **hosted version** at **[meeting.corifeus.com](https://meeting.corifeus.com)** — full meeting workflow built for European businesses, no setup, no API key, no command line.
+
+What the hosted version offers:
+
+- **21-language live translation** during the meeting
+- **AI summaries, action items, decisions, attendees, key quotes** auto-generated after every meeting
+- **Custom vocabulary** — your client / company / industry terms corrected automatically (Pro+ tier)
+- **Searchable meeting library** — find any decision or promise across all your past meetings
+- **Shareable read-only links** — send a clean meeting summary to a client or teammate, no signup needed on their end
+- **One-click email summary** after each meeting
+- **Premium engine on every plan** — no downgraded model, ever
+- **EU billing** — Stripe Tax + VAT-compliant + EUR-priced (Solo €19.99 / Pro €39.99 / Business €99.99 per month, no lock-in)
+- **GDPR-compliant by default** — browser-language auto-detection, no tracking cookies, your meetings stored encrypted
+
+Try the live demo (1 minute free, no signup) or browse the **public sample meeting** at [meeting.corifeus.com/sample](https://meeting.corifeus.com/sample).
+
+---
+
 # Corifeus Network
 
 AI-powered network & email toolkit — free, no signup.
@@ -185,7 +213,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 **🚨 Important Changes:** Any breaking changes are prominently noted in the readme to keep you informed.
 
 
-[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.115
+[**P3X-NETWORK-MCP**](https://corifeus.com/network-mcp) Build v2026.4.117
 
  [![NPM](https://img.shields.io/npm/v/p3x-network-mcp.svg)](https://www.npmjs.com/package/p3x-network-mcp)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
